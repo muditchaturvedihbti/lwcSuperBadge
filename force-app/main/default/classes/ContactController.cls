@@ -8,7 +8,7 @@ public with sharing class ContactController {
                     FirstName, LastName, Email
                 FROM 
                     Contact 
-                LIMIT 10
+                WITH SECURITY_ENFORCED
             ]; 
             
         } catch(Exception e) {
