@@ -2,6 +2,7 @@ public with sharing class ContactController {
     @AuraEnabled(cacheable=true)
     public static List<Contact> getContacts(){
         try {
+            integer i =1/0;
             return [
                 SELECT 
                     FirstName, LastName, Email
@@ -9,6 +10,7 @@ public with sharing class ContactController {
                     Contact 
                 LIMIT 10
             ]; 
+            
         } catch(Exception e) {
             System.debug('ContactController Exceptio thrown.');
             throw new AuraHandledException(e.getMessage());
